@@ -4,7 +4,7 @@ Comments and pull requests welcome.
 # Systems
 
 ## KRKR2 / KiriKiri2
-KRKR2 aka KiriKiri2 is a game engine that executes its own TJS script language, syntax-wise somewhat similar to JavaScript.  
+KRKR2 aka KiriKiri2 is a game engine that executes its own TJS script language, somewhat similar to JavaScript.  
 It was created and developed by W.Dee as a rewrite of their original KiriKiri engine.  
 KRKR2 has been thoroughly outdated for well over a decade, and no sane person would make new games with it.  
 - KRKR2 Source tree: https://github.com/krkrz/krkr2/tree/master/kirikiri2/trunk (Time-frozen/Read-only copy)
@@ -17,15 +17,16 @@ This document in general will refer and link to KRKRZ versions of plugins etc, w
 - KRKRZ Docs: http://krkrz.github.io/documents/
 
 ## KAG3
-KAG3, short for "Kirikiri Adventure Game", is a VN scene and UI building system written by W.Dee in TJS for Krkr2/KrkrZ.  
+KAG3 or "Kirikiri Adventure Game" is a scene and UI building system written by W.Dee in TJS for Krkr2/KrkrZ.  
 KAG3 runs `.ks` files and is the base system on top of which almost all KiriKiri VNs are built.
 - KAG3 Docs: http://kirikirikag.sourceforge.net/contents/index.html
 - KAG3 Source for KrkrZ: https://github.com/krkrz/kag3
 
 ## KAGEX
-KAGEX is an extension of KAG3 by sakano/Naoya Komatsu.  
+KAGEX is an extension of KAG3 by [sakano](https://github.com/sakano)/Naoya Komatsu. (I think.)  
 It mostly adds new graphical processing functions for Layers.  
-Some developers use KAGEX, some don't, whereas KAG3 itself is practically ubiquitous.
+Some developers use KAGEX and some don't, whereas KAG3 itself is practically ubiquitous.  
+Many more extensions exist for KAG3, and some of them are incompatible/mutually exclusive with KAGEX.
 - KAGEX Docs: https://biscrat.com/krkr/docs/kagex/contents/
 - KAGEX Book: https://github.com/sakano/krkr_archives/raw/master/doc/kagex_book/KagexBook.pdf
 
@@ -40,13 +41,14 @@ but this only works for relatively simple and short TJS files. The success rate 
 in the wild is about 20%. If you need to modify a precompiled TJS script (other than string replacement,  
 which can be done with [ScnEditorGUI](https://github.com/marcussacana/KrKrZSceneManager)) and the decompiler fails, generally you're SOL.  
 Thankfully, however, most TJS that ships with games is actually open source and can be found online.
-- **KAG**: The visual novel/adventure game system that takes care of basic UI and UX, layered rendering and game state  
-machinery for the game developer's convenience. KAG is written entirely in TJS, and is itself a processor for KS (KAG Script) files.  
-KAG Script is a simple tag-based language, and a whole game can be written in KS alone. Often, however, developers will use  
-additional systems for ease of rapid development on top of KAG, which relegates the KS scripts to mostly serve the configuration/UI  
-base role. One such example is the SCN scene format and parser by M2 Co. Ltd.
+- **KAG**: The visual novel/adventure game system that takes care of basic UI and UX, layered rendering and
+game state machinery for the game developer's convenience. KAG is written entirely in TJS, and is itself
+a processor for KS (KAG Script) files. KAG Script is a simple tag-based language, and a whole game can be
+written in KS alone. Often, however, developers will use additional systems for ease development on top of KAG,
+which relegates the KS scripts to mostly serve the configuration/UI base role.  
+One such example is the commercial SCN scene format and parser by [M2 Co. Ltd.](https://www.mtwo.co.jp/)
 - **KS**: KAG Script file format. Very simple text-based script that uses a tag system and rudimentary assignment and comparison operators to create interactivity. Usually a game's menu, config and staff roll at least are written in KS. However older and smaller VNs, especially, can also be written entirely in KS.
-- **AMV**: A custom video file format which features an alpha channel, implemented by the freeware plugin AlphaMovie.dll.
+- **AMV**: A custom video file format which features an alpha channel, implemented by plugin AlphaMovie.dll.
 - **SCN**: TLDW
 - **PSB**: TLDW
 - **TLG**:
