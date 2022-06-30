@@ -1,4 +1,5 @@
-A short guide, or rather reference, to the Krkr2/KrkrZ ecosystem for the western reverser.
+A short guide to the Krkr2/KrkrZ ecosystem for the western reverser.  
+Comments and pull requests welcome.
 
 # Systems
 
@@ -32,13 +33,13 @@ Some developers use KAGEX, some don't, whereas KAG3 itself is practically ubiqui
 - **TJS**: The script language executed by the KiriKiri engines. Similar to JavaScript, but unique.  
 File extension is `.tjs`, but the file itself can be either a plaintext script that is compiled on the fly by the engine,  
 or it can be a precompiled binary file which contains just the assembled TJS virtual machine instructions.  
-Apart from basic string constant replacements, there are no reliable or convenient ways to edit compiled TJS script.  
+Apart from basic string replacements, there are no reliable or convenient ways to edit compiled TJS script.  
 Disassemblers let you see what the TJS script does, but the disassembly cannot be parsed back into runnable TJS.  
 A decompiler can be found within the [Furikiri](https://github.com/UlyssesWu/Furikiri) project and run from the command line via its Girigiri interface,  
-but this only works for relatively simple and short TJS files. The success rate for decompilation of TJS files found in the wild is about 20%.  
-If you need to modify a precompiled TJS script (other than string replacement, which can be done with [ScnEditorGUI](https://github.com/marcussacana/KrKrZSceneManager))  
-and the decompiler fails, generally you're SOL (see below). Thankfully, however, most TJS that ships with games is actually  
-shared open source and can be found online.
+but this only works for relatively simple and short TJS files. The success rate for decompilation of TJS files found  
+in the wild is about 20%. If you need to modify a precompiled TJS script (other than string replacement,  
+which can be done with [ScnEditorGUI](https://github.com/marcussacana/KrKrZSceneManager)) and the decompiler fails, generally you're SOL.  
+Thankfully, however, most TJS that ships with games is actually open source and can be found online.
 - **KAG**: The visual novel/adventure game system that takes care of basic UI and UX, layered rendering and game state  
 machinery for the game developer's convenience. KAG is written entirely in TJS, and is itself a processor for KS (KAG Script) files.  
 KAG Script is a simple tag-based language, and a whole game can be written in KS alone. Often, however, developers will use  
@@ -49,13 +50,13 @@ base role. One such example is the SCN scene format and parser by M2 Co. Ltd.
 - **SCN**: TLDW
 - **PSB**: TLDW
 - **TLG**:
-- **SOL**: Shit Outta Luck.
+- **SOL**: Shit Outta Luck
 
 # Plugins
 A major part of the KiriKiri engines' success is their extremely comprehensive support for plug-in DLLs.  
-A massive number of plugins exist for the engine(s), and are used to implement anything from clipboard support  
-to additional renderers, custom audio mixing and interactive cat girls. This is a very lacking list of  
-some plugins by their filename, for which I've been able (and cared enough) to identify a source.
+A massive number of plugins exist for the engine(s), and are used to implement anything from clipboard
+support to additional renderers, custom audio mixing and interactive catgirls. This is a sorely lacking
+list of some plugins by their filename, for which I've been able (and cared enough) to identify a source.
 - **[AlphaMovie.dll](http://kaede-software.com/krlm/plugin/alphamovie.zip)**: Free but not open source. Implements movie files which have an alpha channel.  
 These files have the `.amv` extension. Encoder and playback via http://kaede-software.com/krlm/plugin/alphamovie.zip,  
 Decoding/dumping via https://github.com/xmoeproject/AlphaMovieDecoder
