@@ -29,6 +29,7 @@ Some developers use KAGEX and some don't, whereas KAG3 itself is practically ubi
 Many more extensions exist for KAG3, and some of them are incompatible/mutually exclusive with KAGEX.
 - KAGEX Docs: https://biscrat.com/krkr/docs/kagex/contents/
 - KAGEX Book: https://github.com/sakano/krkr_archives/raw/master/doc/kagex_book/KagexBook.pdf
+- Sakano's blog/articles on KAGEX and related usage: https://biscrat.com/blog/kagex-articles/
 
 # Glossary
 - **TJS**: The script language executed by the KiriKiri engines. Similar to JavaScript, but unique.  
