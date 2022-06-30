@@ -23,8 +23,7 @@ KAG3 runs `.ks` files and is the base system on top of which almost all KiriKiri
 - KAG3 Source for KrkrZ: https://github.com/krkrz/kag3
 
 ## KAGEX
-KAGEX is an extension of KAG3 by [sakano](https://github.com/sakano)/Naoya Komatsu. (I think.)  
-It mostly adds new graphical processing functions for Layers.  
+KAGEX is an extension of KAG3 by [sakano](https://github.com/sakano)/Naoya Komatsu.  
 Some developers use KAGEX and some don't, whereas KAG3 itself is practically ubiquitous.  
 Many more extensions exist for KAG3, and some of them are incompatible/mutually exclusive with KAGEX.
 - KAGEX Docs: https://biscrat.com/krkr/docs/kagex/contents/
