@@ -12,14 +12,14 @@ KRKR2 has been thoroughly outdated for well over a decade, and no sane person wo
 
 ## KRKRZ / KiriKiriZ
 KRKRZ however is a more modern fork of KRKR2 and is still widely used and supported.  
-KRKRZ features a (separate) backwards compatibility layer for Krkr2 called `k2compat`.  
+KRKRZ features a separate backwards compatibility layer for Krkr2 scripts called `k2compat`.  
 This document in general will refer and link to KRKRZ versions of plugins etc, where available.
 - KRKRZ Source tree: https://github.com/krkrz/krkrz
 - KRKRZ Docs: http://krkrz.github.io/documents/
 
 ## K2Compat
 A backwards compatibility layer to allow KRKR2 scripts to run under KRKRZ.  
-- K2Compat Source tree: [http://blog-imgs-43.fc2.com/k/a/s/kasekey/kag3ex3_class.png](https://github.com/krkrz/Krkr2Compat)
+- K2Compat Source tree: https://github.com/krkrz/Krkr2Compat
 
 ## KAG3
 KAG3 or "Kirikiri Adventure Game" is a scene and UI building system written by W.Dee in TJS for KRKR2/KRKRZ.  
@@ -34,7 +34,7 @@ KAGEX is by far the most common choice for developers. You can tell whether a ga
 existence of a plugin called `KAGParserEx.dll` or multiple system scripts beginning named `KAGEnv*.tjs`.  
 KAGEX has been documented quite extensively by [sakano](https://github.com/sakano)/Naoya Komatsu.  
 - KAGEX3 Source tree: https://github.com/krkrz/krkr2/tree/master/kirikiri2/branches/kag3ex3 (Frozen copy)
-- KAGEX3 Diagram: http://blog-imgs-43.fc2.com/k/a/s/kasekey/kag3ex3_class.png
+- KAGEX3 Class diagram: http://blog-imgs-43.fc2.com/k/a/s/kasekey/kag3ex3_class.png
 - KAGEX Docs: https://biscrat.com/krkr/docs/kagex/contents/
 - KAGEX Book: https://github.com/sakano/krkr_archives/raw/master/doc/kagex_book/KagexBook.pdf
 - Sakano's blog/articles on KAGEX and related usage: https://biscrat.com/blog/kagex-articles/
