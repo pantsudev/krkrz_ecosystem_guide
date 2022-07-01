@@ -30,8 +30,8 @@ KAG3 runs `.ks` files and is the base system on top of which almost all KiriKiri
 ## KAGEX
 KAGEX is an extension of KAG3 by [wtnbgo](https://github.com/wtnbgo)/Watanabe Go.  
 Some other extensions exist for KAG3 which are incompatible/mutually exclusive with KAGEX, but in practice  
-KAGEX is by far the most common choice for developers. You can tell whether a game uses KAGEX by by the  
-existence of a plugin called `KAGParserEx.dll` or multiple system scripts beginning named `KAGEnv*.tjs`.  
+KAGEX is by far the most common choice for developers. You can tell whether a game uses KAGEX by the  
+existence of a plugin called `KAGParserEx.dll` or multiple system scripts named `KAGEnv*.tjs`.  
 KAGEX has been documented quite extensively by [sakano](https://github.com/sakano)/Naoya Komatsu.  
 - KAGEX3 Source tree: https://github.com/krkrz/krkr2/tree/master/kirikiri2/branches/kag3ex3 (Frozen copy)
 - KAGEX3 Class diagram: http://blog-imgs-43.fc2.com/k/a/s/kasekey/kag3ex3_class.png
