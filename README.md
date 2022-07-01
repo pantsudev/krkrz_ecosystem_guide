@@ -54,6 +54,37 @@ One such example is the commercial SCN scene format and parser by [M2 Co. Ltd.](
 - **TLG**:
 - **SOL**: Shit Outta Luck
 
+# Dialogue
+Games built on the KAG system have multiple different methods of implementing their dialogue parsing.  
+I'll probably document the actual possible *sources* of the dialogue sometime later;  
+For now I'm just adding a word about text formatting.
+
+## Fonts and default formatting
+For many VNs their dialogue stays visually rather static throughout, and might be monospaced. Monospacing is natural  
+for Japanese text given the use of full-width glyphs, but outside of IDEs should have no place in western locales.  
+
+In fact, shipping a game with monospaced dialogue in English ought to be outlawed.  
+
+Default text formatting is usually set in `default.tjs`, so look there first and see if your issues can be solved  
+by a simple font change. A list of embedded font files to load is usually defined in `embfontlist.tjs`.  
+The available font names used to refer to faces within scripts, then, are the `Dictionary` keys from this file.  
+
+You'll figure it out.
+
+## In-line commands and effects
+As for in-line effects like colors, alignment, speed changes, awaits and so on, there are a couple ways a KAG-based  
+game might parse them. The first is `textrender.dll`. This DLL exposes a TJS class called `TextRenderBase`, on top  
+of which a corresponding `textrender.tjs` implements a proxy class called `TextRender`.  
+I've documented the syntax for `TextRender`-based text formatting in a sister repository.  
+
+A script-only version of `textrender.tjs` which does not utilize the DLL also exists and ships with some games.  
+
+The other possibility is `texttagconverter.tjs`. This script processes a syntax similar to that of `TextRender`  
+into KAG script tags before the text is fed into the KAG parser. I might document this later.  
+
+Automatic word-wrapping implementations are usually tacked onto these scripts, if used.  
+The original Japanese script files do not do automatic word-wrapping.
+
 # Plugins
 A major part of the KiriKiri engines' success is their extremely comprehensive support for plug-in DLLs.  
 A massive number of plugins exist for the engine(s), and are used to implement anything from clipboard
