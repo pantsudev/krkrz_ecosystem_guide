@@ -72,15 +72,19 @@ The available font names used to refer to faces within scripts, then, are the `D
 You'll figure it out.
 
 ## In-line commands and effects
-As for in-line effects like colors, alignment, speed changes, awaits and so on, there are a couple ways a KAG-based  
-game might parse them. The first is `textrender.dll`. This DLL exposes a TJS class called `TextRenderBase`, on top  
-of which a corresponding `textrender.tjs` implements a proxy class called `TextRender`.  
+As for in-line effects like colors, alignment, speed changes, awaits and so on, there are a couple ways  
+a KAG-based game might parse them. The first is `textrender.dll`. This DLL exposes a TJS class called  
+`TextRenderBase`, on top of which a corresponding `textrender.tjs` implements a proxy class called `TextRender`.  
 I've documented the syntax for `TextRender`-based text formatting in a sister repository.  
 
 A script-only version of `textrender.tjs` which does not utilize the DLL also exists and ships with some games.  
 
 The other possibility is `texttagconverter.tjs`. This script processes a syntax similar to that of `TextRender`  
 into KAG script tags before the text is fed into the KAG parser. I might document this later.  
+
+A third possibility, of course, is that the dialogue is written directly in `.ks` scripts, and can therefore use  
+the KAG tags to achieve effects as usual, of course. This was how things originally worked, but no recent or even  
+semi-recent VN puts dialogue directly into `.ks` scripts. I'll write more about this at some point. 
 
 Automatic word-wrapping implementations are usually tacked onto these scripts, if used.  
 The original Japanese script files do not do automatic word-wrapping.
