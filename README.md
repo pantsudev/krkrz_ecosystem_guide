@@ -1,5 +1,6 @@
-A short guide to the Krkr2/KrkrZ ecosystem for the western reverser.  
-Comments and pull requests welcome.
+A short guide to the Krkr2/KrkrZ ecosystem for the western reverser/translator/developer.  
+Wherever the document names the author of a component or system, you should mentally append `(and contributors)`.  
+Comments and pull requests welcome.  
 
 # Systems
 
@@ -23,9 +24,12 @@ KAG3 runs `.ks` files and is the base system on top of which almost all KiriKiri
 - KAG3 Source for KrkrZ: https://github.com/krkrz/kag3
 
 ## KAGEX
-KAGEX is an extension of KAG3 by [sakano](https://github.com/sakano)/Naoya Komatsu.  
-Some developers use KAGEX and some don't, whereas KAG3 itself is practically ubiquitous.  
-Many more extensions exist for KAG3, and some of them are incompatible/mutually exclusive with KAGEX.
+KAGEX is an extension of KAG3 by [wtnbgo](https://github.com/wtnbgo)/Watanabe Go.  
+Some other extensions exist for KAG3 which are incompatible/mutually exclusive with KAGEX, but in practice KAGEX is  
+by far the most common choice for developers. You can tell whether a game uses KAGEX by by the existence of a plugin  
+called `KAGParserEx.dll` or multiple system scripts beginning with `KAGEnv*`.  
+KAGEX has been documented quite extensively by [sakano](https://github.com/sakano)/Naoya Komatsu.  
+- KAGEX3 Source tree: https://github.com/krkrz/krkr2/tree/master/kirikiri2/branches/kag3ex3 (Frozen copy, unknown whether latest)
 - KAGEX Docs: https://biscrat.com/krkr/docs/kagex/contents/
 - KAGEX Book: https://github.com/sakano/krkr_archives/raw/master/doc/kagex_book/KagexBook.pdf
 - Sakano's blog/articles on KAGEX and related usage: https://biscrat.com/blog/kagex-articles/
