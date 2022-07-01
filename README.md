@@ -29,7 +29,7 @@ Some other extensions exist for KAG3 which are incompatible/mutually exclusive w
 KAGEX is by far the most common choice for developers. You can tell whether a game uses KAGEX by by the  
 existence of a plugin called `KAGParserEx.dll` or multiple system scripts beginning named `KAGEnv*.tjs`.  
 KAGEX has been documented quite extensively by [sakano](https://github.com/sakano)/Naoya Komatsu.  
-- KAGEX3 Source tree: https://github.com/krkrz/krkr2/tree/master/kirikiri2/branches/kag3ex3 (Frozen copy, unknown whether latest)
+- KAGEX3 Source tree: https://github.com/krkrz/krkr2/tree/master/kirikiri2/branches/kag3ex3 (Frozen copy)
 - KAGEX Docs: https://biscrat.com/krkr/docs/kagex/contents/
 - KAGEX Book: https://github.com/sakano/krkr_archives/raw/master/doc/kagex_book/KagexBook.pdf
 - Sakano's blog/articles on KAGEX and related usage: https://biscrat.com/blog/kagex-articles/
@@ -71,7 +71,7 @@ In fact, shipping a game with monospaced dialogue in English ought to be outlawe
 
 Default text formatting is usually set in `default.tjs`, so look there first and see if your issues can be solved  
 by a simple font change. A list of embedded font files to load is usually defined in `embfontlist.tjs`.  
-The available font names used to refer to faces within scripts, then, are the `Dictionary` keys from this file.  
+The available font names used to refer to faces within scripts, then, are the `Dictionary` keys from that file.  
 
 You'll figure it out.
 
@@ -107,7 +107,8 @@ but I haven't found a copy of the archive. It is used to implement numerous laye
 - **[getSample.dll](https://github.com/wtnbgo/getSample)**: Used for reading sample data from `WaveSoundBuffer`, usually for mouth movement.
 - **k2compat.dll**
 - **kagexopt.dll**
-- **[KAGParserEx.dll](https://github.com/wtnbgo/KAGParserEx)**: This is an extended replacement for the original KAGParser.
+- **[KAGParser.dll](https://github.com/krkrz/KAGParser/tree/master)**: This is the core parser module of **KAG3**.
+- **[KAGParserEx.dll](https://github.com/wtnbgo/KAGParserEx)**: This is the core parser module for **KAGEX3**. It replaces `KAGParser.dll` when using KAGEX.
 - **krmovie.dll**
 - **[layerExDraw.dll](https://github.com/wtnbgo/layerExDraw)**: Implements support for drawing onto Layers with GDI+.
 - **lzfs.dll**: Kirikiri LZ4fs Plugin. No source found.
@@ -116,7 +117,7 @@ but I haven't found a copy of the archive. It is used to implement numerous laye
 - **pkutil.dll**
 - **psbfile.dll**: TLDW
 - **psd.dll**: Possibly https://github.com/wtnbgo/psdfile
-- **textrender.dll**
+- **textrender.dll**: A native code replacement for the all-script `TextRender.tjs` from **KAGEX3**. Source unknown.
 - **[win32dialog.dll](https://github.com/wtnbgo/win32dialog)**: For displaying native Win32 dialog boxes.
 - **[win32ole.dll](https://github.com/wtnbgo/win32ole)**: Allows calling into Win32 OLE/ActiveX components.
 - **[windowEx.dll](https://github.com/wtnbgo/windowEx)**: Extends the TJS `Window` class with some events and multi-monitor stuff.  
