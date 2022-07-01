@@ -60,8 +60,8 @@ I'll probably document the actual possible *sources* of the dialogue sometime la
 For now I'm just adding a word about text formatting.
 
 ## Fonts and default formatting
-For many VNs their dialogue stays visually rather static throughout, and might be monospaced. Monospacing is natural  
-for Japanese text given the use of full-width glyphs, but outside of IDEs should have no place in western locales.  
+For many VNs their dialogue stays visually rather static throughout, and might be monospaced.  
+Monospacing is natural for Japanese kana & kanji, but should have no place in western dialogue text.  
 
 In fact, shipping a game with monospaced dialogue in English ought to be outlawed.  
 
