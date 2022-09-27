@@ -2,12 +2,17 @@ A short guide to the Krkr2/KrkrZ ecosystem for the western reverser/translator/d
 Wherever the document names the author of a system, you should mentally append `(and contributors)`.  
 Comments and pull requests welcome.  
 
+### Disclaimer
+
+This document effortlessly mixes my own conjecture and estimates with actual documented fact.  
+Don't take any of this as holy scripture. This is just a starting point. Let me know where I'm wrong.
+
 # Systems
 
 ## KRKR2 / KiriKiri2
 KRKR2 aka KiriKiri2 is a game engine that executes its own TJS script language, somewhat similar to JavaScript.  
 It was created and developed by W.Dee as a rewrite of their original KiriKiri engine.  
-KRKR2 has been thoroughly outdated for well over a decade, and no sane person would make new games with it.  
+KRKR2 has been thoroughly outdated for well over a decade, and is generally not used by new projects.
 - KRKR2 Source tree: https://github.com/krkrz/krkr2/tree/master/kirikiri2/trunk (Time-frozen/Read-only copy)
 
 ## KRKRZ / KiriKiriZ
@@ -47,23 +52,28 @@ Apart from basic string replacements, there are no reliable or convenient ways t
 Disassemblers let you see what the TJS script does, but the disassembly cannot be parsed back into runnable TJS.  
 A decompiler can be found within the [Furikiri](https://github.com/UlyssesWu/Furikiri) project and run from the command line via its Girigiri interface,  
 but this only works for relatively simple and short TJS files. The success rate for decompilation of TJS files found  
-in the wild is about 20%. If you need to modify a precompiled TJS script (other than string replacement,  
+in the wild is in my experience about 20%. If you need to modify a precompiled TJS script (other than the string replacement,  
 which can be done with [ScnEditorGUI](https://github.com/marcussacana/KrKrZSceneManager)) and the decompiler fails, generally you're SOL.  
-Thankfully, however, most TJS that ships with games is actually open source and can be found online.
-- **KAG**: The visual novel/adventure game system that takes care of basic UI and UX, layered rendering and
-game state machinery for the game developer's convenience. KAG is written entirely in TJS, and is itself
-a processor for KS (KAG Script) files. KAG Script is a simple tag-based language, and a whole game can be
-written in KS alone. Often, however, developers will use additional systems for ease development on top of KAG,
-which relegates the KS scripts to mostly serve the configuration/UI base role.  
-One such example is the commercial SCN scene format and parser by [M2 Co. Ltd.](https://www.mtwo.co.jp/)
-- **KS**: KAG Script file format. Very simple text-based script that uses a tag system and rudimentary assignment and comparison operators to create interactivity. Usually a game's menu, config and staff roll at least are written in KS. However older and smaller VNs, especially, can also be written entirely in KS.
-- **AMV**: A custom video file format which features an alpha channel, implemented by plugin AlphaMovie.dll.
+Thankfully, however, most TJS that ships with games is actually unmodified open source and can be found online.  
+sakano has written a TJS syntax highlight for Visual Studio Code, available [here](https://marketplace.visualstudio.com/items?itemName=Biscrat.tjs-vscode).
+- **KAG**: The visual novel/adventure game system that takes care of basic UI and UX, layered rendering and  
+game state machinery for the game developer's convenience. KAG is written entirely in TJS, and is itself  
+a processor for KS (KAG Script) files. KAG Script is a simple tag-based language, and a whole game can be  
+written in KS alone. Often, however, developers will use additional systems for ease development on top of KAG,  
+which relegates the KS scripts to mostly serve the menu and UI role.  
+One such example is the commercial`?` SCN scene format and parser by [M2 Co. Ltd.](https://www.mtwo.co.jp/)
+- **KS**: KAG Script file format. Very simple text-based script that uses a tag system and rudimentary  
+assignment and comparison operators to create interactivity. Usually a game's menu, config and staff roll  
+at least are written in KS. However older and smaller VNs in particular can also be written entirely in KS.
+- **AMV**: A custom video file format which features an alpha channel, implemented by plugin `AlphaMovie.dll`.
 - **SCN**: TLDW
 - **PSB**: TLDW
-- **TLG**:
+- **TLG**: Image file format used for foreground sprites, i.e. character art.  
+Convertible to and from PNG by tools like [GARbro](https://github.com/morkt/GARbro) and the [FreeMote PSB Toolkit](https://github.com/UlyssesWu/FreeMote).
+- **SINFO**: A tabulated text file that maps names for characters' attire, expressions etc. to the corresponding images.
 - **SOL**: Shit Outta Luck
 
-# Dialogue
+# Dialogue in KAG/KAGEX
 Games built on the KAG system have multiple different methods of implementing their dialogue parsing.  
 I'll probably document the actual possible *sources* of the dialogue sometime later;  
 For now I'm just adding a word about text formatting.
@@ -91,8 +101,8 @@ A script-only version of `textrender.tjs` which does not utilize the DLL also ex
 The other possibility is `texttagconverter.tjs`. This script processes a syntax similar to that of `TextRender`  
 into KAG script tags before the text is fed into the KAG parser. I might document this later.  
 
-A third possibility, of course, is that the dialogue is written directly in `.ks` scripts, and can therefore use  
-the KAG tags to achieve effects as usual, of course. This was how things originally worked, but no recent or even  
+A third possibility is that the dialogue is written directly in `.ks` scripts, and can therefore use  
+the KAG tags to achieve effects as usual. This was how things originally worked, but no recent or even  
 semi-recent VN puts dialogue directly into `.ks` scripts. I'll write more about this at some point. 
 
 Automatic word-wrapping implementations are usually tacked onto these scripts, if used.  
@@ -106,20 +116,20 @@ list of some plugins by their filename, for which I've been able (and cared enou
 - **[AlphaMovie.dll](http://kaede-software.com/krlm/plugin/alphamovie.zip)**: Free but not open source. Implements movie files which have an alpha channel.  
 These files have the `.amv` extension. Encoder and playback via http://kaede-software.com/krlm/plugin/alphamovie.zip,  
 Decoding/dumping via https://github.com/xmoeproject/AlphaMovieDecoder
-- **extNagano.dll**: Free but not open source. Used to be available at http://ymtkyk.sakura.ne.jp/krkr.STG/plugin/extNagano.html,  
-but I haven't found a copy of the archive. It is used to implement numerous layer transition effects.
+- **extNagano.dll**: Free but not open source. It is used to implement numerous layer transition effects.  
+Used to be available at http://ymtkyk.sakura.ne.jp/krkr.STG/plugin/extNagano.html, but I haven't found a copy of the archive. 
 - **extrans.dll**
 - **[getSample.dll](https://github.com/wtnbgo/getSample)**: Used for reading sample data from `WaveSoundBuffer`, usually for mouth movement.
 - **k2compat.dll**
 - **kagexopt.dll**
 - **[KAGParser.dll](https://github.com/krkrz/KAGParser/tree/master)**: This is the core parser module of **KAG3**.
-- **[KAGParserEx.dll](https://github.com/wtnbgo/KAGParserEx)**: This is the core parser module for **KAGEX3**. It replaces `KAGParser.dll` when using KAGEX.
+- **[KAGParserEx.dll](https://github.com/wtnbgo/KAGParserEx)**: This is the core parser module for **KAGEX3**. It replaces `KAGParser.dll` when using **KAGEX3**.
 - **krmovie.dll**
 - **[layerExDraw.dll](https://github.com/wtnbgo/layerExDraw)**: Implements support for drawing onto Layers with GDI+.
-- **lzfs.dll**: Kirikiri LZ4fs Plugin. No source found.
+- **lzfs.dll**: KiriKiri LZ4fs Plugin. No source found.
 - **[menu.dll](https://github.com/krkrz/menu)**: Implements `Window.menu` to enable Win32 window menu bars.
 - **PackinOne.dll**
-- **pkutil.dll**
+- **pkutil.dll**: Provides public key cryptography utilities, generally used to verify file signatures and/or product keys.
 - **psbfile.dll**: TLDW
 - **psd.dll**: Possibly https://github.com/wtnbgo/psdfile
 - **textrender.dll**: A native code replacement for the all-script `TextRender.tjs` from **KAGEX3**. Source unknown.
