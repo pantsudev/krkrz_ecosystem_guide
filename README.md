@@ -7,6 +7,11 @@ Comments and pull requests welcome.
 This document effortlessly mixes my own conjecture and estimates with actual documented fact.  
 Don't take any of this as holy scripture. This is just a starting point. Let me know where I'm wrong.
 
+## How to edit Shift-JIS *and* UCS-2 encoded script without JP system locale
+
+Use [Sublime Text](https://www.sublimetext.com/) with the [ConvertToUTF8](https://github.com/seanliang/ConvertToUTF8) plugin.  
+Despite its name, this plugin actually also adds transparent support for SJIS text encoding, which Sublime Text lacks natively.
+
 # Systems
 
 ## KRKR2 / KiriKiri2
